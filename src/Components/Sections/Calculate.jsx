@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import { Data, System } from "..";
 import { AiOutlineClose } from "react-icons/ai";
 import { Slider } from "antd";
@@ -217,50 +217,69 @@ function Calculate() {
           <h2 className="total--heading">Итог</h2>
 
           <div className="result">
-            <p className="result--title">Service: </p>
-            {selectService && (
-              <div className="radio">
-                <span>service: {selectService} dd </span>
-                <button className="none" onClick={unChecked}>
-                  <AiOutlineClose />
-                </button>
-              </div>
-            )}
-            <p className="result--title">Длительность проекта: </p>
-            {inputValue && (
-              <div className="radio">
-                <span className="">Длительность {inputValue} месяцев</span>
-                <button
-                  className="none"
-                  onClick={() => {
-                    setInputValue(null);
-                  }}>
-                  <AiOutlineClose />
-                </button>
-              </div>
-            )}
-            <p className="result--title">Module: </p>
-            {selectModule.map((item, index) => {
-              return (
-                <span key={index} className="radio">
-                  {item}
-                  <button className="none" onClick={() => {}}>
+            <p className="result--title">
+              {selectService ? "Выберете услугу:" : ""}
+            </p>
+            <div className="result--item">
+              {selectService && (
+                <div className="radio">
+                  <span>{selectService} dd </span>
+                  <button className="none" onClick={unChecked}>
                     <AiOutlineClose />
                   </button>
-                </span>
-              );
-            })}
-            <p className="result--title">Products: </p>
-            {selectedValues.map((item, index) => {
-              return (
-                <span key={index} className="radio">
-                  {item}
-                  <button className="none" onClick={() => {}}>
+                </div>
+              )}
+            </div>
+
+            <p className="result--title">
+              {selectModule.length > 0 ? "Спецификация модуля:" : ""}{" "}
+            </p>
+            <div className="result--item">
+              {selectModule.map((item, index) => {
+                return (
+                  <span key={index} className="radio">
+                    {item}
+                    <button className="none" onClick={() => {}}>
+                      <AiOutlineClose />
+                    </button>
+                  </span>
+                );
+              })}
+            </div>
+            <p className="result--title">
+              {selectedValues.length > 0
+                ? "Продукты в системе 1С:Предприятие:"
+                : ""}{" "}
+            </p>
+            <div className="result--item">
+              {selectedValues.map((item, index) => {
+                return (
+                  <span key={index} className="radio">
+                    {item}
+                    <button className="none" onClick={() => {}}>
+                      <AiOutlineClose />
+                    </button>
+                  </span>
+                );
+              })}
+            </div>
+            <p className="result--title">
+              {inputValue ? "Длительность проекта:" : ""}{" "}
+            </p>
+            <div className="result--item">
+              {inputValue && (
+                <div className="radio">
+                  <span className="">Длительность {inputValue} месяцев</span>
+                  <button
+                    className="none"
+                    onClick={() => {
+                      setInputValue(null);
+                    }}>
                     <AiOutlineClose />
                   </button>
-                </span>
-              );
-            })}
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
