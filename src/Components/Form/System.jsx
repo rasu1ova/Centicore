@@ -1,11 +1,16 @@
-import React from 'react'
+import React from "react";
 
 export default function System(props) {
-  const {checkboxName, checkboxValue, id, checked} = props
+  const { checkDesc, id, checked, onClicks } = props;
   return (
-    <label>
-      <input type="checkbox" {checked} name={checkboxName} id={id} />
-      {checkboxValue}
+    <label className="checking" htmlFor={"checkbox" + id} onClick={onClicks}>
+      <input
+        type="checkbox"
+        // checked={checked}
+        id={"checkbox" + id}
+        defaultChecked={checked}
+      />
+      {checkDesc}
     </label>
-  )
+  );
 }

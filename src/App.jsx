@@ -1,16 +1,14 @@
-import './App.css'
-import { Header } from './Components'
-import Layout from './Components/Layout'
+import "./App.css";
+import { Header } from "./Components";
+import Layout from "./Components/Layout";
 
 function App() {
-
-
   return (
     <>
-    <Header/>
-    <Layout/>
+      <Header />
+      <Layout />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
