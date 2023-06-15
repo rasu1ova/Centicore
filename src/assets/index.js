@@ -1,1 +1,5 @@
 export {default as Logo } from './logo.png'
+export {default as Sponsor1 } from './imgs/sponsor1.png'
+export {default as Sponsor2 } from './imgs/sponsor2.png'
+export {default as Sponsor3 } from './imgs/sponsor3.png'
+export {default as Sponsor4 } from './imgs/sponsor4.png'
